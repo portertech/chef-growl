@@ -1,20 +1,19 @@
-# Puppet-growl
+# Chef-growl
 
-## **Automatic syntax checking for your puppet manifests, instant notifications to your desktop using Growl**
+## **Automatic Chef cookbook testing, instant notifications to your desktop using Growl**
 
-* **Puppet-growl** is a ruby script that watches if there is any changes to your puppet manifests (by monitoring .pp files) and sends notifications to your desktop if the puppet manifest you just created/edited passes the syntax checks or not.
-* It aims to facilitate the development of puppet code by sending instant notifications to your OS X desktop.
+* **Chef-growl** is a ruby script that watches for OpsCode Chef cookbook changes.  
+* It aims to facilitate the development of cookbook code by sending instant notifications to your OS X desktop.
 
 ### Installation (OS X)
 
 1. ``` sudo gem install eventmachine ruby-growl em-dir-watcher ```
-2. Edit the "dir" variable in puppet-growl.rb with the full path of your puppet manifests.
+2. Set an environment variable "CHEF_PATH" with the full path to the root of your Chef repository (export CHEF_PATH=/home/user/chef)
 3. Make sure to allow the following in Growl preferences: Listen for incoming connections, allow remote application registration.
-4. Run the script: ```sudo ruby puppet-growl.rb```
+4. Run the script: ```ruby chef-growl.rb```
 
 ### Error Fixes
-osx/foundation https://gist.github.com/289868
+osx/foundation --> https://gist.github.com/289868
 
 ### TODO
 * Supporting libnotify under Linux.
-

@@ -16,14 +16,14 @@ EM.run do
       cookbook = path.split('/').first
       file = path.split('/').last
       # Ignore tmp & hidden files
-      unless file.match(/^#/)
+      unless file.match(/^#/) || file.match(/^\./)
         result = %x[cd #{dir} && rake test_cookbook[#{cookbook}]].chomp
         g = Growl.new host, "ruby-growl", ["ruby-growl Notification"]
         if result.match(/FATAL/)
           g.notify "ruby-growl Notification", "Chef", "Cookbook Error, #{path}: #{result}"
         else
           g.notify "ruby-growl Notification", "Chef", "Cookbook #{cookbook}: OK"
-        end      
+        end
       end
     end
   end
