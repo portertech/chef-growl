@@ -12,6 +12,9 @@
 3. Make sure to allow the following in Growl preferences: Listen for incoming connections, allow remote application registration.
 4. Run the script: ```sudo ruby puppet-growl.rb```
 
+### Error Fixes
+osx/foundation https://gist.github.com/289868
+
 ### TODO
 * Supporting libnotify under Linux.
 
